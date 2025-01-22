@@ -1,32 +1,76 @@
 'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import { motion } from 'motion/react'
+import { useState } from "react";
+import { motion } from "motion/react";
+import Image from "next/image";
+import { Plus } from "lucide-react";
 
-import { Plus } from 'lucide-react';
-
-export default function Page() {
-  const [open, setOpen] = useState(false)
+export default function ExpandableImage() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className='border flex justify-center'>
-      <motion.div className='bg-black flex items-center justify-center w-fit p-1 space-x-1 rounded-full cursor-pointer'
+    <div className="border flex justify-center">
+      {/* Div avec fond noir qui s'ajuste dynamiquement avec le padding */}
+      <motion.div
+        className={`bg-black rounded-full flex items-center ${open ? 'space-x-8' : 'space-x-2'} cursor-pointer`}
         onClick={() => setOpen(!open)}
-        animate={{ width: open ? 200 : 'auto' }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}>
+        initial={{ padding: 4 }}
+        animate={{ 
+          padding: open ? 8 : 4, 
+          width: "auto",
+          height: "auto", 
+        }} 
+        transition={{ duration: 0.2 }}>
+          
+        <div className="flex items-center space-x-2">
+          {/* Image animée qui grandit au clic */}
+          <motion.span>
+            <motion.img
+                src="/pfp.png"
+                alt="pfp"
+                initial={{ width: 24, height: 24 }} 
+                animate={{ width: open ? 36 : 24, height: open ? 36 : 24 }}
+                transition={{ duration: 0.2 }}
+                style={{ originX: 0.5, originY: 0.5 }} 
+                layout
+            />
+          </motion.span>
 
-        <Image src="/pfp.png" width={24} height={24} alt="pfp" />
+          {open && (
+            <motion.div 
+              className="flex flex-col text-xs"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-gray-300">Hello, I&apos;m</p>
+              <p className="text-white font-semibold">Lucas</p>
+            </motion.div>
+          )}
+        </div>
 
-        <motion.span
-          initial={{ rotate: 0, opacity: 1 }}
-          animate={{ opacity: open ? 0 : 1 }}
-          whileHover={{ rotate: 180}}
-          transition={{ duration: 0.3 }}
-          className='bg-green-500 rounded-full w-6 h-6 flex items-center justify-center'
-          >
-          <Plus color='white'size={16}/>
-        </motion.span>
+        {/* Icône "+" animée */}
+        {!open ? (
+          <motion.span
+            className="bg-green-500 rounded-full h-6 w-6 flex items-center justify-center"
+            animate={{ rotate: 180 }}
+            whileHover={{ rotate: 720 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, duration: 0.8 }}>
+            <Plus color="white" size={20} />
+          </motion.span>
+        ) : (
+          <motion.div className="flex items-center justify-center space-x-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}>
+            <span className="h-9 w-9 bg-red-500 rounded-full flex items-center justify-center">
+            </span>
+
+
+            <span className="h-9 w-9 bg-orange-500 rounded-full flex items-center justify-center">
+            </span>
+          </motion.div>
+        )}
       </motion.div>
     </div>
-  )
+  );
 }

@@ -1,14 +1,13 @@
 'use client'
 import { useState } from "react";
 import { motion } from "motion/react";
-import Image from "next/image";
 import { Plus } from "lucide-react";
 
 export default function ExpandableImage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border flex justify-center">
+    <div className="flex justify-center">
       {/* Div avec fond noir qui s'ajuste dynamiquement avec le padding */}
       <motion.div
         className={`bg-black rounded-full flex items-center ${open ? 'space-x-8' : 'space-x-2'} cursor-pointer`}

@@ -1,7 +1,8 @@
 'use client'
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Plus } from "lucide-react";
+
+import { AudioLines, Plus, Settings } from "lucide-react";
 
 export default function ExpandableImage() {
   const [open, setOpen] = useState(false);
@@ -61,11 +62,13 @@ export default function ExpandableImage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}>
-            <span className="h-9 w-9 bg-red-500 rounded-full flex items-center justify-center">
+            <span className="h-9 w-9 bg-orange-500 rounded-full flex items-center justify-center">
+              <AudioLines color="white" size={20} />
             </span>
 
 
-            <span className="h-9 w-9 bg-orange-500 rounded-full flex items-center justify-center">
+            <span className="h-9 w-9 bg-blue-500 rounded-full flex items-center justify-center">
+              <Settings color="white" size={20} />
             </span>
           </motion.div>
         )}

@@ -14,7 +14,7 @@ export default function Page() {
   }
 
   return (
-    <div className='border flex justify-center'>
+    <div className='flex justify-center'>
       <motion.div
         className='bg-black w-28 rounded-full px-1.5 py-1 flex items-center cursor-pointer'
         onClick={() => setOpen(!open)}
@@ -30,7 +30,7 @@ export default function Page() {
           <motion.div
             className={`flex items-center justify-center rounded-full`}
             initial={{ padding: '2px 0px 2px 0px', backgroundColor: 'transparent' }}
-            animate={open ? { padding: silentring ? '2px 12px 2px 12px' : '2px 0px 2px 0px', backgroundColor: silentring ? 'red' : 'transparent' } : {}}
+            animate={open ? { padding: silentring ? '2px 12px 2px 12px' : '2px 0px 2px 0px', backgroundColor: silentring ? 'rgb(239, 68, 68)' : 'transparent' } : {}}
             transition={{ duration: 0.3 }}
           >
             <motion.span
@@ -56,11 +56,11 @@ export default function Page() {
           <motion.p
             className={`${silentring ? "text-red-500" : "text-white"} font-medium text-sm`}
             variants={textVariants}
-            initial="init" // Départ du texte avec faible opacité et légèrement en bas
-            animate="anim"   // Animation de l'opacité et de la position (remontée)
-            exit="exit"   // Lorsque le texte disparaît, il s'en va vers le haut
-            key={silentring ? 'silent-text' : 'ring-text'} // Clé pour forcer le re-rendu du texte
-            transition={{ duration: 0.3 }}  // Durée de l'animation
+            initial="init"
+            animate="anim"   
+            exit="exit"  
+            key={silentring ? 'silent-text' : 'ring-text'} 
+            transition={{ duration: 0.3 }}  
           >
             {silentring ? 'Silent' : 'Ring'}
           </motion.p>

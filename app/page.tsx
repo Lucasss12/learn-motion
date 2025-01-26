@@ -13,14 +13,18 @@ const links = [
     label: "Day-3",
     href: "/day-3",
   },
+  {
+    label: "Day-4",
+    href: "/day-4",
+  },
 ]
 
 export default function Home() {
   return (
     <div>
-      <ul className="grid grid-cols-3">
+      <ul className="flex flex-col">
       {links.map((item) => (
-        <li className="bg-slate-100 py-1 px-2.5 rounded-md w-fit" key={item.href}>
+        <li className="p-2.5 border-b border-neutral-300 last:border-none" key={item.href}>
           <Link href={item.href}>
             {item.label}
           </Link>

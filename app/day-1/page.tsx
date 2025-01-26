@@ -31,7 +31,6 @@ export default function ExpandableImage() {
                 animate={{ width: open ? 36 : 24, height: open ? 36 : 24 }}
                 transition={{ duration: 0.2 }}
                 style={{ originX: 0.5, originY: 0.5 }} 
-                layout
             />
           </motion.span>
 

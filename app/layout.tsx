@@ -17,7 +17,7 @@ export default function RootLayout({
 }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} md:mx-auto mx-5 max-w-screen-md sm:my-24 my-16`}>
+      <body className={`${rubik.className} md:mx-auto mx-5 max-w-screen-lg sm:my-24 my-16`}>
         {children}
       </body>
     </html>

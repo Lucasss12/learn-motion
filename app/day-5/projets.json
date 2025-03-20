@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Dashboard freelance",
+    "date": "Septembre 2024",
+    "tags": ["Figma"],
+    "image": "/projects/dashboard-freelance.webp",
+    "link": "https://dribbble.com/shots/25212350-Dashboard-freelance"
+  },
+  {
+    "id": 2,
+    "title": "Page inscription",
+    "date": "Septembre 2024",
+    "tags": ["Figma"],
+    "image": "/projects/sign-up.webp",
+    "link": "https://dribbble.com/shots/25212347-Sign-Up"
+  },
+  {
+    "id": 3,
+    "title": "Naxt",
+    "date": "Mars 2024",
+    "tags": ["React.js", "Next.js", "Tailwind CSS"],
+    "image": "/projects/naxt.webp",
+    "link": "https://naxt.fr/"
+  },
+  {
+    "id": 4,
+    "title": "Page inscription",
+    "date": "Septembre 2024",
+    "tags": ["Figma"],
+    "image": "/projects/daily-1.2.webp",
+    "link": "https://dribbble.com/shots/24361150-Daily-Ui-001-Sign-Up"
+  },
+  {
+    "id": 5,
+    "title": "The Packing Hroject",
+    "date": "Mars 2033",
+    "tags": ["React.js", "CSS"],
+    "image": "/projects/tph.webp",
+    "link": "https://the-packing-hroject-8rmg.vercel.app/"
+  },
+  {
+    "id": 6,
+    "title": "Truffières Saint-Martin",
+    "date": "Janvier 2023",
+    "tags": ["React.js", "CSS"],
+    "image": "/projects/tsm.webp",
+    "link": "https://truffieressaintmartin.com/"
+  }
+]

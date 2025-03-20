@@ -17,6 +17,10 @@ const links = [
     label: "Day-4",
     href: "/day-4",
   },
+  {
+    label: "Day-5",
+    href: "/day-5",
+  },
 ]
 
 export default function Home() {
